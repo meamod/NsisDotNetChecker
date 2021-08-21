@@ -4,21 +4,21 @@ The .NET Framework Checker NSIS plugin is used to detect if the required .NET Fr
 ## Structure:
  - `bin` - compiled NSIS plugin (ready-to-use)
  - `plugin` - contains source code for building DotNetChecker plugin in Visual Studio 2010
- - `nsis` - contains CheckNetFramework macros (DotNetChecker.nsh) and example NSIS installation file
+ - `nsis` - contains CheckNetFramework macros (DotNetChecker.nsh and DotNetCheckerOnly.nsh) and example NSIS installation file
 
 ## Installation
 
 ### All Users
 1. Copy `DotNetChecker.dll` to NSIS plugins directory (usually `C:\Program Files\Nsis\Plugins\` or `C:\Program Files (x86)\Nsis\Plugins\`)
-2. Add to your installer project `DotNetChecker.nsh` file
-3. Reference `DotNetChecker.nsh` in your main NSI file like this:
-		`!include "DotNetChecker.nsh"`
+2. Add to your installer project `DotNetChecker.nsh` or `DotNetCheckerOnly.nsh` file
+3. Reference `DotNetChecker.nsh` or `DotNetCheckerOnly.nsh` in your main NSI file like this:
+		`!include "DotNetChecker.nsh"` or or `!include "DotNetCheckerOnly.nsh"`
 4. Insert macros with the version of required .NET framework.
 
 ### Local
 1. Copy the whole project in to the same folder as your NSIS Script.
 2. Refrence the Plugin DLL like this: `!addplugindir "NsisDotNetChecker\bin"`
-3. Reference `DotNetChecker.nsh` in your main NSI file like this: `!include "NsisDotNetChecker\nsis\DotNetChecker.nsh"`
+3. Reference `DotNetChecker.nsh` or `DotNetCheckerOnly.nsh` in your main NSI file like this: `!include "NsisDotNetChecker\nsis\DotNetChecker.nsh"` or `!include "NsisDotNetChecker\nsis\DotNetCheckerOnly.nsh"`
 
 ## Usage
 
