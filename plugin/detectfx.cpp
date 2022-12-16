@@ -885,6 +885,31 @@ bool IsNetfx472Installed()
 	return bRetValue;
 }
 
+/******************************************************************
+Function Name:	IsNetfx481Installed
+Description:	Uses the detection method recommended at
+http://msdn.microsoft.com/en-us/library/ee942965(v=vs.110).aspx
+to determine whether the .NET Framework 4.8.1 is
+installed on the machine
+Inputs:         NONE
+Results:        true if the .NET Framework 4.8.1 is installed
+false otherwise
+******************************************************************/
+bool IsNetfx481Installed()
+{
+	bool bRetValue = false;
+	DWORD dwRegValue = 0;
+
+	if (RegistryGetValue(HKEY_LOCAL_MACHINE, g_szNetfx48RegKeyName, g_szNetfx48RegValueName, NULL, (LPBYTE)&dwRegValue, sizeof(DWORD)))
+	{
+		if (g_dwNetfx481ReleaseVersion <= dwRegValue)
+			bRetValue = true;
+	}
+
+	return bRetValue;
+}
+
+
 
 /******************************************************************
 Function Name:	IsNetfx481Installed

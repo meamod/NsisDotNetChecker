@@ -17,7 +17,7 @@
 
 !macro GetFrameworkUrlAndReadableVersions FrameworkVersion FrameworkUrl FrameworkReadableVersion
 	!ifndef DOTNET481_URL
-		!define DOTNET481_URL        "https://go.microsoft.com/fwlink/?LinkId=2203306"
+		!define DOTNET481_URL       "https://go.microsoft.com/fwlink/?LinkId=2203306"
 		!define DOTNET48_URL        "https://go.microsoft.com/fwlink/?LinkId=2088631"
 		!define DOTNET472_URL       "https://go.microsoft.com/fwlink/?LinkId=863265"
 		!define DOTNET471_URL       "https://go.microsoft.com/fwlink/?LinkId=852104"
