@@ -6,3 +6,4 @@ plugin/ipch
 plugin/Release
 nsis/*.exe
 plugin/.vs
+/SignBuilds.bat
